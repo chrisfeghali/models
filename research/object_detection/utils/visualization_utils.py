@@ -793,6 +793,7 @@ def visualize_boxes_and_labels_on_image_array(
           else:
             display_str = '{}: ID {}'.format(display_str, track_ids[i])
         box_to_display_str_map[box].append(display_str)
+        print(display_str) #Thanks to Patryk Mungai
         if agnostic_mode:
           box_to_color_map[box] = 'DarkOrange'
         elif track_ids is not None:
