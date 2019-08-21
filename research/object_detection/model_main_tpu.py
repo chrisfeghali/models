@@ -23,7 +23,7 @@ from absl import flags
 import tensorflow as tf
 
 from object_detection import model_hparams
-from object_detection import model_lib_tpu
+from object_detection import model_lib_tpu as model_lib
 
 flags.DEFINE_string(
     'model_dir', None, 'Path to output model directory '
