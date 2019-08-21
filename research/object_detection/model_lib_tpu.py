@@ -215,7 +215,7 @@ def provide_groundtruth(model, labels):
       groundtruth_is_crowd_list=gt_is_crowd_list)
 
 
-def create_model_fn(detection_model_fn, configs, hparams, use_tpu=False,
+def create_model_fn(detection_model_fn, configs, hparams, use_tpu=True,
                     postprocess_on_cpu=False):
   """Creates a model function for `Estimator`.
   Args:
@@ -512,13 +512,13 @@ def create_estimator_and_inputs(run_config,
                                 sample_1_of_n_eval_on_train_examples=1,
                                 model_fn_creator=create_model_fn,
                                 use_tpu_estimator=True,
-                                use_tpu=False,
-                                num_shards=1,
+                                use_tpu=True,
+                                num_shards=8,
                                 params=None,
                                 override_eval_num_epochs=True,
                                 save_final_config=False,
                                 postprocess_on_cpu=False,
-                                export_to_tpu=None,
+                                export_to_tpu=True,
                                 **kwargs):
   """Creates `Estimator`, input functions, and steps.
   Args:
